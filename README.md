@@ -3,6 +3,7 @@
 キータッチイベントのバインドを楽にするjQueryプラグイン → [demo site](http://prog.re-d.net/demo/jqKeyCodeBinder/)
 
 アルファベットおよび cursol(up, left, down, right)、return/space 単一キーのイベントバインドが可能
+
 また、上記単一キー + ( ALT or SHIFT or CTRL )付きのキーバインドが可能
 
 
@@ -44,13 +45,13 @@
 ### off
 
 #### キーバインド解除
-* 基本
+基本
 
-	binder.off( "b" );
+ 	binder.off( "b" );
 	binder.off( "alt+shift+ctrl+c" );
 
 
-* 並び順の違うキーバインド（文字ベース）は別のイベントとして扱う
+並び順の違うキーバインド（文字ベース）は別のイベントとして扱う
 
 
 	binder.on( "alt+shift+ctrl+c" );
@@ -59,7 +60,7 @@
 	binder.off( "alt+shift+ctrl+c" );
 
 
-* 複数キーバインド 単一キーバインド解除
+複数キーバインド 単一キーバインド解除
 	binder.on( "shift+z alt+z", function(){ alert( "shift+z or alt+z" )} );
 	binder.off( "shift+z" );	//「shift+z」のみ解除
 
