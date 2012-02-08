@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>キータッチイベントのバインドを楽にするjQueryプラグイン jqKeyCodeBinder</title>
+<style type="text/css">
+* {
+	margin:0;
+	padding:0;
+}
+body {
+	font-family: "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+	background-color:#f5f5f5;
+}
+
+#title {
+	line-height:2em;
+	padding-left:0.5em;
+	text-indent:0.5em;
+}
+
+#description {
+	padding-bottom:1em;
+	padding-left:2em;
+	text-indent:0.5em;
+}
+pre {
+	font-size:1em;
+	color:#444444;
+	font-weight: bold;
+	line-height: 150%;
+	text-align: left;
+	display:block;
+
+	font-family: monospace;
+	padding: 0 1em 2em 1em;
+	background:#ECF8FF none repeat scroll 0 0;
+	border:1px solid #999999;
+	overflow:scroll;
+
+	-moz-background-clip:border;
+	-moz-background-inline-policy:continuous;
+	-moz-background-origin:padding;
+}
+
+.note {
+	color:#C00;
+	text-indent:1em;
+	line-height:2em;
+}
+</style>
+</head>
+<body>
+<div>
+<h1 id="title">jqKeyCodeBinder.js</h1>
+<p id="description">キーバインドを楽に設定できるjQueryプラグイン</p>
+</div>
+<div>
+<code><pre id="code">
+var binder = $.jqKeyCodeBinder();
+
+//onでキーバインド設定
+binder.on( "a", function(){ alert("a")} );
+binder.on( "b", function(){ alert("b")} );	//下段の方でバインド解除
+binder.on( "shift+ctrl+c", function(){ alert( "shift+ctrl+c" )} );
+binder.on( "alt+shift+ctrl+c", function(){ alert( "alt+shift+ctrl+c" )} );
+
+//up, left, down, right, space, returnも設定可能 
+binder.on( "shift+down", function(){ alert( "shift+down" )} );
+binder.on( "ctrl+right", function(){ alert( "ctrl+right" )} );
+binder.on( "shift+alt+ctrl+return", function(){ alert( "shift+alt+ctrl+return" )} );
+
+//複数のバインドも可能（スペース区切り）
+binder.on( "shift+d ctrl+e", function(){ alert( "shift+d or ctrl+e" )} );
+
+//同じキーバインドの追加もできる（設定した順に実行）
+binder.on( "shift+f ctrl+alt+g", function(){ alert( "shift+f or ctrl+alt+g 1" )} );
+binder.on( "shift+f ctrl+alt+g", function(){ alert( "shift+f or ctrl+alt+g 2" )} );
+
+//offでキーバインド解除
+binder.off( "b" );
+binder.on( "shift+h ctrl+alt+k", function(){ alert( "shift+h or ctrl+alt+k 1" );} );
+binder.on( "shift+h ctrl+alt+k", function(){ alert( "shift+h or ctrl+alt+k 2" );} );
+//binder.off( "shift+h ctrl+alt+h");
+
+//「a+shift」に対して「shift+a」と記述すると解除されない。別のキーバインド設定として扱う
+binder.on( "a+shift", function(){ alert( "a+shift" )} );	//off( "shift+a" )では解除されない
+binder.on( "shift+a", function(){ alert( "shift+a" )} );
+binder.off( "shift+a" );
+
+//複数設定した中で「shift+z」のみ解除
+binder.on( "shift+z alt+z", function(){ alert( "shift+z or alt+z" )} );
+binder.off( "shift+z" );
+</pre></code>
+</div>
+<p class="note">※ブラウザのキーバインドと重複する場合は、ブラウザ側が優先されます</p>
+<!-- SCRIPTS -->
+<script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+<script src="../jqKeyCodeBinder.js"></script>
+
+<script id="function">
+var binder = $.jqKeyCodeBinder();
+
+//onでキーバインド設定
+binder.on( "a", function(){ alert("a")} );
+binder.on( "b", function(){ alert("b")} );	//下段の方でバインド解除
+binder.on( "shift+ctrl+c", function(){ alert( "shift+ctrl+c" )} );
+binder.on( "alt+shift+ctrl+c", function(){ alert( "alt+shift+ctrl+c" )} );
+
+//up, left, down, right, space, returnも設定可能 
+binder.on( "shift+down", function(){ alert( "shift+down" )} );
+binder.on( "ctrl+right", function(){ alert( "ctrl+right" )} );
+binder.on( "shift+alt+ctrl+return", function(){ alert( "shift+alt+ctrl+return" )} );
+
+//複数のバインドも可能（スペース区切り）
+binder.on( "shift+d ctrl+e", function(){ alert( "shift+d or ctrl+e" )} );
+
+//同じキーバインドの追加もできる（設定した順に実行）
+binder.on( "shift+f ctrl+alt+g", function(){ alert( "shift+f or ctrl+alt+g 1" )} );
+binder.on( "shift+f ctrl+alt+g", function(){ alert( "shift+f or ctrl+alt+g 2" )} );
+
+//offでキーバインド解除
+binder.off( "b" );
+binder.on( "shift+h ctrl+alt+k", function(){ alert( "shift+h or ctrl+alt+k 1" );} );
+binder.on( "shift+h ctrl+alt+k", function(){ alert( "shift+h or ctrl+alt+k 2" );} );
+//binder.off( "shift+h ctrl+alt+h");
+
+//「a+shift」に対して「shift+a」と記述すると解除されない。別のキーバインド設定として扱う
+binder.on( "a+shift", function(){ alert( "a+shift" )} );	//off( "shift+a" )では解除されない
+binder.on( "shift+a", function(){ alert( "shift+a" )} );
+binder.off( "shift+a" );
+
+//複数設定した中で「shift+z」のみ解除
+binder.on( "shift+z alt+z", function(){ alert( "shift+z or alt+z" )} );
+binder.off( "shift+z" );
+
+</script>
+
+</body>
+</html>
