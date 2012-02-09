@@ -5,7 +5,7 @@
  * @author       kamiyam (http://twitter.com/kamiyam)
  * @copyright    (c) 2012 キータッチイベントのバインドを楽にするjQueryプラグイン jqKeyCodeBinder
  * @license      The MIT License
- * @link         
+ * @link         https://github.com/kamiyam/jqKeyCodeBinder
  *
  */
 
@@ -24,13 +24,15 @@ if( window.console == null )	window.console = { log: function(str){ alert(str); 
 //start
 $[name] = function( options )
 {
+	
+	var p = $( "body" ).data( name );
+	if (p) return p;
+
+
 	if (!(this instanceof $[name])) return new $[name]( options );
 	var o = this;
 	var c = o.config = $.extend( {}, $[name].defaults, options );
-	var fn = o.fn = $[name].fn;
-
-	var p = $( "body" ).data( name );
-	if (p) return p;
+	
 
 	$( "body" ).data( name, o );
 
@@ -148,7 +150,7 @@ var p_fn = {
 	}
 }
 
-$[name].prototype = {
+$[name].prototype = $.extend( $[name].prototype, {
 	on : function( keyBind, delegade ){
 		var binds = keyBind.toUpperCase().split( " " );
 		for( var i = 0; i < binds.length; i++ ){
@@ -184,7 +186,7 @@ $[name].prototype = {
 	unbind : function (){
 		$( document ).off( "." + name );
 	} 
-};
+});
 
 $[name].defaults = {
 	debug: false,

@@ -29,6 +29,7 @@
 
 
 ### 複数イベント
+#### スペースで区切る
 	binder.on( "shift+d ctrl+e", function(){ alert( "shift+d or ctrl+e" )} );
 
 
