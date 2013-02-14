@@ -1,5 +1,5 @@
 {
-    "name": "jqKeyCodeBinder",
+    "name": "jqkeycodebinder",
     "title": "jQuery jqKeyCodeBinder",
     "description": "This jQuery plugin is to simplify the binding of key touch event.",
     "keywords": [
@@ -12,15 +12,16 @@
         "url": "http://nantokaworks.com"
     },
     "licenses": [
-    {
-        "type": "MIT",
-        "url": "http://opensource.org/licenses/MIT"
-    }
-],
+        {
+            "type": "MIT",
+            "url": "http://opensource.org/licenses/MIT"
+        }
+    ],
     "bugs": "https://github.com/kamiyam/jqKeyCodeBinder/issues",
     "homepage": "https://github.com/kamiyam/jqKeyCodeBinder",
     "docs": "https://github.com/kamiyam/jqKeyCodeBinder/blob/master/README.md",
     "download": "https://github.com/kamiyam/jqKeyCodeBinder/archive/0.0.1.zip",
+    "demo": "http://www.dynamicdrive.com/dynamicindex9/fluidtextresizer.htm",
     "dependencies": {
         "jquery": ">=1.5"
     }
