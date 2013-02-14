@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Jqkeycodebinder : " />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Jqkeycodebinder</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/kamiyam/jqKeyCodeBinder">View on GitHub</a>
+
+          <h1 id="project_title">Jqkeycodebinder</h1>
+          <h2 id="project_tagline"></h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/kamiyam/jqKeyCodeBinder/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/kamiyam/jqKeyCodeBinder/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h1>jqKeyCodeBinder</h1>
+
+<p>キータッチイベントのバインドを楽にするjQueryプラグイン → <a href="http://nantokaworks.com/demo/jqKeyCodeBinder/">demo site</a></p>
+
+<p>アルファベットおよび cursol(up, left, down, right)、return/space 単一キーのイベントバインドが可能</p>
+
+<p>また、上記単一キー + ( ALT or SHIFT or CTRL )付きのキーバインドが可能</p>
+
+<h2>loading</h2>
+
+<pre><code>var binder = $.jqKeyCodeBinder();
+</code></pre>
+
+<h2>on</h2>
+
+<h3>単一キーバインド</h3>
+
+<pre><code>binder.on( "a", function(){ alert("a")} );
+</code></pre>
+
+<h3>複数キーバインド</h3>
+
+<pre><code>binder.on( "shift+ctrl+c", function(){ alert( "shift+ctrl+c" )} );
+binder.on( "alt+shift+ctrl+down", function(){ alert( "alt+shift+ctrl+down" )} );
+binder.on( "shift+alt+ctrl+return", function(){ alert( "shift+alt+ctrl+return" )} );
+</code></pre>
+
+<h3>同一キーバインド</h3>
+
+<h4>設定した順に実行する</h4>
+
+<pre><code>binder.on( "shift+f", function(){ alert( "shift+f 1" )} );
+binder.on( "shift+f", function(){ alert( "shift+f 2" )} );
+</code></pre>
+
+<h3>複数イベント</h3>
+
+<h4>スペースで区切る</h4>
+
+<pre><code>binder.on( "shift+d ctrl+e", function(){ alert( "shift+d or ctrl+e" )} );
+</code></pre>
+
+<h2>off</h2>
+
+<h3>キーバインド解除</h3>
+
+<h4>基本</h4>
+
+<pre><code>binder.on( "b", hogehoge );
+binder.off( "b" );
+
+binder.on( "alt+shift+ctrl+c", fugafuga );
+binder.off( "alt+shift+ctrl+c" );
+</code></pre>
+
+<h4>並び順の違うキーバインド（文字ベース）は別のイベントバインドとして扱う</h4>
+
+<pre><code>binder.on( "alt+shift+ctrl+c", hogefuga );
+binder.on( "alt+shift+c+ctrl", hogefuga );  //←次のoff("alt+shift+ctrl+c")では解除されない
+
+binder.off( "alt+shift+ctrl+c" );
+</code></pre>
+
+<h4>複数キーバインド 単一キーバインド解除</h4>
+
+<pre><code>binder.on( "shift+z alt+z", fugahoge );
+binder.off( "shift+z" );    //「shift+z」のみ解除
+</code></pre>
+
+<h2>undind</h2>
+
+<h3>すべてのキーバインドを解除する</h3>
+
+<pre><code>binder.unbind();
+</code></pre>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Jqkeycodebinder maintained by <a href="https://github.com/kamiyam">kamiyam</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
