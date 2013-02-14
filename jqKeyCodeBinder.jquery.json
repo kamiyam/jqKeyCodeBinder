@@ -1,7 +1,7 @@
 {
     "name": "jqKeyCodeBinder",
-    "title": "simplify the binding of key touch event",
-    "description": "This is to simplify the binding of key touch event.",
+    "title": "jQuery jqKeyCodeBinder",
+    "description": "This jQuery plugin is to simplify the binding of key touch event.",
     "keywords": [
         "ui"
     ],
@@ -14,13 +14,13 @@
     "licenses": [
     {
         "type": "MIT",
-        "url": "https://github.com/jquery/jquery-color/blob/2.1.2/MIT-LICENSE.txt"
+        "url": "http://opensource.org/licenses/MIT"
     }
 ],
     "bugs": "https://github.com/kamiyam/jqKeyCodeBinder/issues",
     "homepage": "https://github.com/kamiyam/jqKeyCodeBinder",
     "docs": "https://github.com/kamiyam/jqKeyCodeBinder/blob/master/README.md",
-    "download": "https://github.com/kamiyam/jqKeyCodeBinder",
+    "download": "https://github.com/kamiyam/jqKeyCodeBinder/archive/0.0.1.zip",
     "dependencies": {
         "jquery": ">=1.5"
     }
