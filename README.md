@@ -1,6 +1,6 @@
 # jqKeyCodeBinder
 
-キータッチイベントのバインドを楽にするjQueryプラグイン → [demo site](http://prog.re-d.net/demo/jqKeyCodeBinder/)
+キータッチイベントのバインドを楽にするjQueryプラグイン → [demo site](http://nantokaworks.com/demo/jqKeyCodeBinder/)
 
 アルファベットおよび cursol(up, left, down, right)、return/space 単一キーのイベントバインドが可能
 
