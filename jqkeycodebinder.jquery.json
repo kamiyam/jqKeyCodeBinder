@@ -21,7 +21,7 @@
     "homepage": "https://github.com/kamiyam/jqKeyCodeBinder",
     "docs": "https://github.com/kamiyam/jqKeyCodeBinder/blob/master/README.md",
     "download": "https://github.com/kamiyam/jqKeyCodeBinder/archive/0.0.2.zip",
-    "demo": "http://www.dynamicdrive.com/dynamicindex9/fluidtextresizer.htm",
+    "demo": "http://nantokaworks.com/demo/jqKeyCodeBinder/",
     "dependencies": {
         "jquery": ">=1.5"
     }
