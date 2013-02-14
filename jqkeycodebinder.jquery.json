@@ -1,11 +1,11 @@
 {
     "name": "jqkeycodebinder",
-    "title": "jQuery jqKeyCodeBinder",
+    "title": "jqKeyCodeBinder",
     "description": "This jQuery plugin is to simplify the binding of key touch event.",
     "keywords": [
         "ui"
     ],
-    "version": "0.0.2",
+    "version": "0.0.1",
     "author": {
         "name": "kamiyam",
         "email": "labs.k5m@gmail.com",
@@ -20,7 +20,7 @@
     "bugs": "https://github.com/kamiyam/jqKeyCodeBinder/issues",
     "homepage": "https://github.com/kamiyam/jqKeyCodeBinder",
     "docs": "https://github.com/kamiyam/jqKeyCodeBinder/blob/master/README.md",
-    "download": "https://github.com/kamiyam/jqKeyCodeBinder/archive/0.0.2.zip",
+    "download": "https://github.com/kamiyam/jqKeyCodeBinder/archive/0.0.1.zip",
     "demo": "http://nantokaworks.com/demo/jqKeyCodeBinder/",
     "dependencies": {
         "jquery": ">=1.5"
