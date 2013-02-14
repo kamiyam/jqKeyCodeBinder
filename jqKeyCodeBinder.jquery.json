@@ -19,8 +19,8 @@
 ],
     "bugs": "https://github.com/kamiyam/jqKeyCodeBinder/issues",
     "homepage": "https://github.com/kamiyam/jqKeyCodeBinder",
-    "docs": "https://github.com/kamiyam/jqKeyCodeBinder",
-    "download": "http://code.jquery.com/#color",
+    "docs": "https://github.com/kamiyam/jqKeyCodeBinder/blob/master/README.md",
+    "download": "https://github.com/kamiyam/jqKeyCodeBinder",
     "dependencies": {
         "jquery": ">=1.5"
     }
